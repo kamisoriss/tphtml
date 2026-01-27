@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/xml.min.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => hljs.highlightAll());
+    </script>
     <title>tp3</title>
 </head>
 <body>
@@ -22,13 +27,33 @@
             <tr>
                 <th scope="col">Nom</th>
                 <th scope="col">définition</th>
+                <th scope="col">exemple</th>
             </tr>
             <tr>
                 <td>
                     h1
                 </td>
                 <td>titre principal </td>
+                <td class="exemple"><pre ><code class="language-html">&lt;h1&gt;ceci est un H1&lt;/h1&gt;</code></pre>
+                    <div class="apercu">
+                        <h1>ceci est un H1</h1>
+                    </div>
+                </td>
             </tr>
+            <tr>
+                <td>a</td>
+                <td>crée un lien vers une autre page</td>
+                <td class="exemple"><pre><code class="language-html">&lt;a href="https://www.google.fr"&gt;ceci est un a&lt;/a&gt;</code></pre>
+                    <div class="apercu">
+                        <a href="https://www.google.fr">ceci est un lien vers google</a>
+                    </div>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
         </thead>
     </table>
 </body>
