@@ -33,21 +33,21 @@ td:last-of-type {
   text-align: center;
 }
 
-tbody tr {
-    background-color: #ffffff;
+/* Zebra striping: odd rows white, even rows light gray */
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
 }
-
-/* 2. On définit la couleur pour les lignes paires (2, 4, 6...) */
-/* Ton gris clair actuel */
-tbody tr:nth-of-type(even) {
-    background-color: rgb(237, 238, 242);
+tbody tr:nth-child(even) {
+  background-color: rgb(237, 238, 242);
 }
 
 /* 3. Pour la colonne exemple, on garde ton style sombre */
 /* On ajoute !important si jamais une autre règle essaie de l'écraser */
+/* Example column: dark code block cell */
 td.exemple {
-    background-color: #1C1E26 !important;
-    border: 1px solid rgb(160, 160, 160);
+  background-color: #1C1E26;
+  border: none;
+  padding: 0;
 }
 tfoot th {
   text-align: right;
@@ -87,11 +87,7 @@ pre {
 .hljs-strong { font-weight: 700; }
 .hljs-emphasis { font-style: italic; }
 
-td.exemple {
-  background: #1C1E26;  
-  border: none;           
-  padding: 0;
-}
+/* (duplicate consolidated above) */
 
 td.exemple .apercu {
   background: #ffffff;
