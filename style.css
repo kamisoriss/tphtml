@@ -33,12 +33,19 @@ td:last-of-type {
   text-align: center;
 }
 
-/* Zebra striping: odd rows white, even rows light gray */
-tbody tr:nth-child(odd) {
-  background-color: #ffffff;
+/* Zebra striping (scoped) to avoid external overrides */
+.zebra tbody tr:nth-child(odd) {
+  background-color: #FFFFFF !important;
 }
-tbody tr:nth-child(even) {
-  background-color: rgb(237, 238, 242);
+.zebra tbody tr:nth-child(even) {
+  background-color: #EDEEF2 !important; /* stable light gray */
+}
+/* Ensure cells inherit the row color even if td has a default background elsewhere */
+.zebra tbody tr:nth-child(odd) > td:not(.exemple) {
+  background-color: #FFFFFF !important;
+}
+.zebra tbody tr:nth-child(even) > td:not(.exemple) {
+  background-color: #EDEEF2 !important;
 }
 
 /* 3. Pour la colonne exemple, on garde ton style sombre */
