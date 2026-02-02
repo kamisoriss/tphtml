@@ -1,26 +1,23 @@
-html {
-  background-color: rgb(189, 189, 189);
+html{
+    background-color: rgb(189, 189, 189);
 }
-
-a {
-  text-decoration: none;
-  border: 2.5px solid rgb(140, 140, 140);
-  color: black;
+a{
+    text-decoration:none;
+    border: 2.5px solid rgb(140, 140, 140);
+    color: black;
 }
-
-table {
-  border-collapse: collapse;
-  border: 2px solid rgb(140, 140, 140);
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+table{
+    border-collapse: collapse;
+    border: 2px solid rgb(140, 140, 140);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
-
-caption {
-  caption-side: top;
-  padding: 10px;
-  font-weight: bold;
+caption{
+    caption-side: top;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 30px;
 }
-
 thead,
 tfoot {
   background-color: rgb(228 240 245);
@@ -36,10 +33,22 @@ td:last-of-type {
   text-align: center;
 }
 
-tbody>tr:nth-of-type(even) {
-  background-color: rgb(237 238 242);
+tbody tr {
+    background-color: #ffffff;
 }
 
+/* 2. On définit la couleur pour les lignes paires (2, 4, 6...) */
+/* Ton gris clair actuel */
+tbody tr:nth-of-type(even) {
+    background-color: rgb(237, 238, 242);
+}
+
+/* 3. Pour la colonne exemple, on garde ton style sombre */
+/* On ajoute !important si jamais une autre règle essaie de l'écraser */
+td.exemple {
+    background-color: #1C1E26 !important;
+    border: 1px solid rgb(160, 160, 160);
+}
 tfoot th {
   text-align: right;
 }
@@ -48,13 +57,9 @@ tfoot td {
   font-weight: bold;
 }
 
-/* ====== Horizon-like theme for highlight.js ====== */
-/* Bloc <pre> global (fond Horizon et typographie) */
 pre {
-  background: #1C1E26;
-  /* Horizon background */
-  color: #E0E0E0;
-  /* default text */
+  background: #1C1E26; 
+  color: #E0E0E0;      
   border: 1px solid #2A2E38;
   border-radius: 8px;
   padding: 12px 14px;
@@ -62,117 +67,40 @@ pre {
   line-height: 1.55;
   font-family: Consolas, "Fira Code", "Courier New", monospace;
   font-size: 0.95rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
+.hljs { background: transparent; color: #E0E0E0; }
+.hljs-comment, .hljs-quote { color: #6C6F93; font-style: italic; }
 
-/* highlight.js base */
-.hljs {
-  background: transparent;
-  color: #E0E0E0;
-}
+.hljs-tag, .hljs-name { color: #F09383; }
+.hljs-attr, .hljs-attribute { color: #E95678; }
+.hljs-string, .hljs-attr-value { color: #29D398; }
 
-.hljs-comment,
-.hljs-quote {
-  color: #6C6F93;
-  font-style: italic;
-}
+.hljs-keyword, .hljs-selector-tag { color: #E95678; }
+.hljs-number, .hljs-literal, .hljs-symbol, .hljs-bullet { color: #FAB795; }
+.hljs-title, .hljs-section { color: #26BBD9; }
+.hljs-built_in, .hljs-builtin-name { color: #EE64AC; }
+.hljs-meta { color: #59E1E3; }
 
-/* HTML/XML specifics */
-.hljs-tag,
-.hljs-name {
-  color: #F09383;
-}
+.hljs-addition { background: #1f242e; color: #29D398; }
+.hljs-deletion { background: #2e1f28; color: #E95678; }
+.hljs-strong { font-weight: 700; }
+.hljs-emphasis { font-style: italic; }
 
-.hljs-attr,
-.hljs-attribute {
-  color: #E95678;
-}
-
-.hljs-string,
-.hljs-attr-value {
-  color: #29D398;
-}
-
-/* Generics */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #E95678;
-}
-
-.hljs-number,
-.hljs-literal,
-.hljs-symbol,
-.hljs-bullet {
-  color: #FAB795;
-}
-
-.hljs-title,
-.hljs-section {
-  color: #26BBD9;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #EE64AC;
-}
-
-.hljs-meta {
-  color: #59E1E3;
-}
-
-/* Diffs, emphasis */
-.hljs-addition {
-  background: #1f242e;
-  color: #29D398;
-}
-
-.hljs-deletion {
-  background: #2e1f28;
-  color: #E95678;
-}
-
-.hljs-strong {
-  font-weight: 700;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-/* Cellule d'exemple = même rendu que le bloc de code */
 td.exemple {
-  background: #1C1E26;
-  /* même couleur que <pre> */
-  border: none;
-  /* on retire la bordure du td pour ne garder que celle du <pre> */
+  background: #1C1E26;  
+  border: none;           
   padding: 0;
-  /* pas d’espace autour du <pre> */
 }
 
 td.exemple .apercu {
   background: #ffffff;
-  /* fond blanc uniquement pour l’aperçu */
-  color: #111;
-  /* texte foncé pour contraster */
+  color: #111;        
   border-radius: 6px;
   padding: 8px 10px;
-  margin-top: 8px;
-  /* espace sous le bloc de code */
+  margin-top: 8px;  
 }
 
 td.exemple .apercu h1 {
-  margin: 0;
-  /* éviter un gros décalage vertical */
+  margin: 0;           
 }
-ul{
-  list-style:decimal;
-}
-.image{
-  position:relative;
-}
-img{
-  padding-right: 50px;
-}
-/*img[js]{
-  padding-right: 500;
-}*/
