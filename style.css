@@ -76,6 +76,20 @@ pre {
   font-size: 0.95rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
+/* In previews, show plain pre without code block styling */
+td.exemple .apercu pre {
+  background: transparent;
+  color: inherit;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  overflow: visible;
+  line-height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: pre;
+}
 .hljs { background: transparent; color: #E0E0E0; }
 .hljs-comment, .hljs-quote { color: #6C6F93; font-style: italic; }
 
@@ -97,7 +111,7 @@ pre {
 /* (duplicate consolidated above) */
 
 td.exemple .apercu {
-  background: #ffffff;
+  background: #e2e2e2;
   color: #111;        
   border-radius: 6px;
   padding: 8px 10px;
