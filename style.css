@@ -1,14 +1,71 @@
-html{
-    background-color: rgb(189, 189, 189);
+:root
+{
+  --html-background-color:#CCC;
+  /* Button (light mode by default): dark button on light bg */
+  --button-background-color:#333;
+  --button-text-color:#FFF;
+  --button-border-color:#444;
+  --table-header-bg: rgb(228 240 245);
+  --table-row-odd-bg: #FFFFFF;
+  --table-row-even-bg: #EDEEF2;
+  --table-border-color: rgb(160 160 160);
+  --apercu-bg: #e2e2e2;
 }
+/* Dark theme is applied only via the .dark_mode class */
+html{
+  background-color: var(--html-background-color);
+  color: #111; /* light mode default text color */
+}
+/* When dark mode is active on html, also darken background via variable */
+html.dark_mode{ --html-background-color:#3A3A3A; }
+/* Dark-mode class: flips colors except background */
+.dark_mode{
+
+  --html-text-color:#CCC;
+  /* Button in dark mode: light button on dark bg */
+  --button-background-color:#EAEAEA;
+  --button-text-color:#222;
+  --button-border-color:#CFCFCF;
+  --table-header-bg:#4A4A4A;
+  --table-row-odd-bg:#3F3F3F;
+  --table-row-even-bg:#454545;
+  --table-border-color:#6A6A6A;
+  --apercu-bg:#4A4A4A;
+}
+
+/* Scope color styles inside dark_mode */
+.dark_mode{ color: var(--html-text-color); }
+.dark_mode a{ color: var(--html-text-color); border: 2.5px solid var(--table-border-color); }
+.dark_mode table{ border: 2px solid var(--table-border-color); }
+.dark_mode thead,
+.dark_mode tfoot{ background-color: var(--table-header-bg); }
+.dark_mode th,
+.dark_mode td{ border: 1px solid var(--table-border-color); color: var(--html-text-color); }
+.dark_mode .zebra tbody tr:nth-child(odd){ background-color: var(--table-row-odd-bg) !important; }
+.dark_mode .zebra tbody tr:nth-child(even){ background-color: var(--table-row-even-bg) !important; }
+.dark_mode .zebra tbody tr:nth-child(odd) > td:not(.exemple){ background-color: var(--table-row-odd-bg) !important; }
+.dark_mode .zebra tbody tr:nth-child(even) > td:not(.exemple){ background-color: var(--table-row-even-bg) !important; }
+.dark_mode td.exemple{ background-color: #1C1E26; border: none; padding: 0; }
+.dark_mode pre{ background: #1C1E26; color: #E0E0E0; border: 1px solid #2A2E38; border-radius: 8px; padding: 12px 14px; overflow: auto; line-height: 1.55; font-family: Consolas, "Fira Code", "Courier New", monospace; font-size: 0.95rem; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+.dark_mode td.exemple .apercu{ background: var(--apercu-bg); color: var(--html-text-color); border-radius: 6px; padding: 8px 10px; margin-top: 8px; }
 a{
     text-decoration:none;
-    border: 2.5px solid rgb(140, 140, 140);
-    color: black;
+    border: 2.5px solid var(--table-border-color);
+    color: black; /* light mode default */
 }
+/* Button general styles using variables (invert by mode) */
+button{
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--button-border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+button:hover{ filter: brightness(1.05); }
+button:active{ filter: brightness(0.97); }
 table{
     border-collapse: collapse;
-    border: 2px solid rgb(140, 140, 140);
+  border: 2px solid var(--table-border-color);
     font-size: 0.8rem;
     letter-spacing: 1px;
 }
@@ -20,12 +77,12 @@ caption{
 }
 thead,
 tfoot {
-  background-color: rgb(228 240 245);
+  background-color: var(--table-header-bg);
 }
 
 th,
 td {
-  border: 1px solid rgb(160 160 160);
+  border: 1px solid var(--table-border-color);
   padding: 8px 10px;
 }
 
@@ -35,17 +92,17 @@ td:last-of-type {
 
 /* Zebra striping (scoped) to avoid external overrides */
 .zebra tbody tr:nth-child(odd) {
-  background-color: #FFFFFF !important;
+  background-color: var(--table-row-odd-bg) !important;
 }
 .zebra tbody tr:nth-child(even) {
-  background-color: #EDEEF2 !important; /* stable light gray */
+  background-color: var(--table-row-even-bg) !important;
 }
 /* Ensure cells inherit the row color even if td has a default background elsewhere */
 .zebra tbody tr:nth-child(odd) > td:not(.exemple) {
-  background-color: #FFFFFF !important;
+  background-color: var(--table-row-odd-bg) !important;
 }
 .zebra tbody tr:nth-child(even) > td:not(.exemple) {
-  background-color: #EDEEF2 !important;
+  background-color: var(--table-row-even-bg) !important;
 }
 
 /* 3. Pour la colonne exemple, on garde ton style sombre */
@@ -111,8 +168,8 @@ td.exemple .apercu pre {
 /* (duplicate consolidated above) */
 
 td.exemple .apercu {
-  background: #e2e2e2;
-  color: #111;        
+  background: var(--apercu-bg);
+  color: var(--html-text-color);        
   border-radius: 6px;
   padding: 8px 10px;
   margin-top: 8px;  
@@ -120,4 +177,15 @@ td.exemple .apercu {
 
 td.exemple .apercu h1 {
   margin: 0;           
+}
+.darkmode_button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background-image: url('img/darkmode-icon.png');
+    background-size: cover;
+  background-color: var(--button-background-color);
+  margin-left: 1700px;
+
 }
