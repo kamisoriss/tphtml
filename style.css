@@ -10,6 +10,7 @@
   --table-row-even-bg: #EDEEF2;
   --table-border-color: rgb(160 160 160);
   --apercu-bg: #e2e2e2;
+  --button-background-image:url('img/darkmode-icon.png')
 }
 /* Dark theme is applied only via the .dark_mode class */
 html{
@@ -31,6 +32,7 @@ html.dark_mode{ --html-background-color:#3A3A3A; }
   --table-row-even-bg:#454545;
   --table-border-color:#6A6A6A;
   --apercu-bg:#4A4A4A;
+  --button-background-image:url('img/lightmode.png')
 }
 
 /* Scope color styles inside dark_mode */
@@ -183,9 +185,12 @@ td.exemple .apercu h1 {
     height: 40px;
     border: none;
     cursor: pointer;
-    background-image: url('img/darkmode-icon.png');
+    background-image: var(--button-background-image);
     background-size: cover;
-  background-color: var(--button-background-color);
-  margin-left: 1700px;
-
+    margin-left: 95%;
+    border-radius: 50%;
+    
+}
+.tp button{
+  margin-left: 5%;
 }
