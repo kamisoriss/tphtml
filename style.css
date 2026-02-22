@@ -57,18 +57,36 @@ html.dark_mode{ --html-background-color:#3A3A3A; }
 .dark_mode td.exemple .apercu{ background: var(--apercu-bg); color: var(--html-text-color); border-radius: 6px; padding: 8px 10px; margin-top: 8px; }
 a{
     text-decoration:none;
-    color: black; /* light mode default */
+    color: black; 
 }
-/* Remove bullets from navigation lists */
 .tp nav ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    /* On transforme la liste en colonne */
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    gap: 20px; 
+    white-space: nowrap; 
 }
 #inbutton{
   border: none;
   color: var(--ainbuttoncolor);
 
+}
+h1{
+  display: flex;
+  width: 14%;
+  height: auto;
+  border: solid 3px var(--h3centrecolor);
+}
+h3{
+  display: flex;
+  width: 14%;
+  height: auto;
+  border: solid 3px var(--h3centrecolor);
 }
 /* Button general styles using variables (invert by mode) */
 button{
