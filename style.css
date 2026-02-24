@@ -285,3 +285,6 @@ td.exemple .apercu h1 {
 .vacances td.zonebc { background-color: rgb(128, 255, 128); color: #111; }
 .vacances td.zonecc { background-color: rgb(128, 128, 255); color: #111; }
 .vacances td.corsec { background-color: rgb(255, 165, 0); color: #111; }
+#titresansbordure{
+  border:none;
+}
