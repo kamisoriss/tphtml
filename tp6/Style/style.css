@@ -1,0 +1,52 @@
+:root
+{
+    --imagedarkmode-background-color: black;
+}
+.dark_mode
+{
+    --imagedarkmode-background-color: rgb(255, 255, 255);
+}
+.carte {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+     column-gap: clamp(16px, 5vw, 32px);
+     row-gap: clamp(16px, 5vh, 32px);
+}
+
+.carte img {
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    visibility: hidden;
+}
+
+.card {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.card-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card-cover {
+    position: absolute;
+    inset: 0;
+    background: var(--imagedarkmode-background-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card-toggle:checked + img {
+    visibility: visible;
+}
+.card-toggle:checked + img + .card-cover {
+    display: none;
+}
+
