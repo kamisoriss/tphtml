@@ -1,0 +1,15 @@
+header{
+    background-color: red;
+    height: 10%;
+    width: auto;
+}
+.millieu{
+    background-color: green;
+    height: 80%;
+    width: auto;
+}
+footer{
+    background-color: blue;
+    height: 10%;
+    width: auto;
+}
