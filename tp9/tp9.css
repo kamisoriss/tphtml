@@ -1,10 +1,5 @@
 :root
 {
-    --html-background-color:#CCC;
-    /* Button (light mode by default): dark button on light bg */
-    --button-background-color:#333;
-    --button-text-color:#FFF;
-    --button-border-color:#444;
     --table-header-bg: rgb(228 240 245);
     --table-row-odd-bg: #FFFFFF;
     --table-row-even-bg: #EDEEF2;
@@ -14,6 +9,7 @@
     --buttontpcolorgris: rgb(56, 56, 56);
     --ainbuttoncolor: rgb(219, 219, 219);
     --h3centrecolor: #333;
+    --darkmode-line-color: #000;
 }
 /* Dark theme is applied only via the .dark_mode class */
 html{
@@ -24,11 +20,6 @@ html{
 html.dark_mode{ --html-background-color:#3A3A3A; }
 /* Dark-mode class: flips colors except background */
 .dark_mode{
-
-    --html-text-color:#CCC;
-    --h3centrecolor: #CCC;
-    --button-background-color:#EAEAEA;
-    --button-text-color:#222;
     --button-border-color:#CFCFCF;
     --table-header-bg:#4A4A4A;
     --table-row-odd-bg:#2F2F2F;
@@ -38,6 +29,7 @@ html.dark_mode{ --html-background-color:#3A3A3A; }
     --button-background-image:url('img/lightmode.png');
     --buttontpcolorgris: rgb(160, 160, 160);
     --ainbuttoncolor: rgb(0, 0, 0);
+    --darkmode-line-color: #ffffff;
 }
 
 /* Scope color styles inside dark_mode */
@@ -53,7 +45,6 @@ html.dark_mode{ --html-background-color:#3A3A3A; }
 .dark_mode .zebra tbody tr:nth-child(odd) > td:not(.exemple):not(.zoneac):not(.zonebc):not(.zonecc):not(.corsec){ background-color: var(--table-row-odd-bg) !important; }
 .dark_mode .zebra tbody tr:nth-child(even) > td:not(.exemple):not(.zoneac):not(.zonebc):not(.zonecc):not(.corsec){ background-color: var(--table-row-even-bg) !important; }
 .dark_mode td.exemple{ background-color: #1C1E26; border: none; padding: 0; }
-.dark_mode pre{ background: #1C1E26; color: #E0E0E0; border: 1px solid #2A2E38; border-radius: 8px; padding: 12px 14px; overflow: auto; line-height: 1.55; font-family: Consolas, "Fira Code", "Courier New", monospace; font-size: 0.95rem; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
 .dark_mode td.exemple .apercu{ background: var(--apercu-bg); color: var(--html-text-color); border-radius: 6px; padding: 8px 10px; margin-top: 8px; }
 
 .form {
@@ -62,12 +53,49 @@ html.dark_mode{ --html-background-color:#3A3A3A; }
     display: flex;
     flex-direction: column;
     gap: 20px;
+    border: solid 1px var(--table-border-color);
 }
 .titre-form {
     text-align: center;
 }
 .bordure {
     border: 1px solid var(--table-border-color, #CCC);
+    margin: 2%;
     padding: 20px;
     border-radius: 5px;
+}
+.titre-colonne {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.champs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Permet de revenir à la ligne si c'est trop petit */
+}
+.input-ligne {
+    border: none;
+    border-bottom: 1px solid var(--darkmode-line-color);
+    background: transparent;
+    outline: none;
+}
+/* C'est cette règle qui force les colonnes à se mettre côte à côte */
+.section-double {
+    display: flex;
+    flex-direction: row; /* Aligne horizontalement */
+    justify-content: space-between;
+    gap: 30px; /* Espace entre la colonne gauche et droite */
+}
+
+/* Chaque colonne doit prendre une part égale de l'espace */
+.colonne {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Optionnel : aligner les labels verticalement dans chaque colonne */
+.colonne label {
+    margin-bottom: 10px;
 }
