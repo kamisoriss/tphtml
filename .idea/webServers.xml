@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="8407b101-4b28-4fc9-89fb-cdc204852cb4" name="tpweb">
+        <fileTransfer rootFolder="/web" accessType="SFTP" host="tpweb.bouchard.net.local" port="22" sshConfigId="a4d6287e-888b-49a2-8440-4bdf7b647ba2" sshConfig="bouchardtpweb@tpweb.bouchard.net.local:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

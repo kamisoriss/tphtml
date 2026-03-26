@@ -1,0 +1,13 @@
+/* Target images by their alt attribute (matches your HTML) */
+img[alt="js"] {
+    width: 74px;
+    height: 60px;
+}
+img[alt="css"] {
+    width: 74px;
+    height: 60px;
+}
+img[alt="html"] {
+    width: 74px;
+    height: 60px;
+}
