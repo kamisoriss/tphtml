@@ -218,7 +218,6 @@ td.exemple .apercu h1 {
     cursor: pointer;
     background-image: var(--button-background-image);
     background-size: cover;
-    margin-left: 95%;
     border-radius: 50%;
     position: relative; /* enable pseudo-element positioning */
 }

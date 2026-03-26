@@ -14,6 +14,7 @@
   --buttontpcolorgris: rgb(56, 56, 56);
   --ainbuttoncolor: rgb(219, 219, 219);
   --h3centrecolor: #333;
+    --hover-color: #474747;
 }
 /* Dark theme is applied only via the .dark_mode class */
 html{
@@ -38,6 +39,7 @@ html.dark_mode{ --html-background-color:#3A3A3A; }
   --button-background-image:url('../img/lightmode.png');
   --buttontpcolorgris: rgb(160, 160, 160);
   --ainbuttoncolor: rgb(0, 0, 0);
+    --hover-color: #ffffff;
 }
 .dark_mode{ color: var(--html-text-color); }
 .dark_mode a{ color: var(--html-text-color); border: 2.5px solid var(--table-border-color); }
@@ -56,7 +58,48 @@ html.dark_mode{ --html-background-color:#3A3A3A; }
     cursor: pointer;
     background-image: var(--button-background-image);
     background-size: cover;
-    margin-left: 95%;
+    /* margin-left: 95%; <-- SUPPRIME BIEN CETTE LIGNE ! */
     border-radius: 50%;
-    position: relative; 
+    position: relative;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.tp {
+    display: flex;
+    align-items: center;
+}
+
+/* C'est ICI qu'on met les liens côte à côte */
+.tp ul {
+    display: flex;         /* Met les éléments de la liste sur la même ligne */
+    flex-direction: row;   /* Force de gauche à droite */
+    gap: 20px;             /* Espace entre les liens */
+    list-style-type: none; /* Enlève les points noirs */
+    margin: 0;
+    padding: 0;
+
+}
+.tp a {
+    text-decoration: none; /* Enlève le trait de soulignement */
+    border: none !important; /* Force la suppression de l'encadré (même en dark mode) */
+    font-weight: bold; /* Optionnel : met le texte un peu plus en gras pour faire joli */
+}
+.tp a:hover {
+    color: var(--hover-color);
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    display: flex;
+}
+.tp img{
+    width: 50%;
+
 }

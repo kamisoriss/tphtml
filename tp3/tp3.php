@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css?v=20260202">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../tp9/tp9.css">
+        <link rel="stylesheet" href="../tp8/style.css">
         <script src="../script.js" defer></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
@@ -15,23 +17,9 @@
         <title>tp3</title>
     </head>
     <body>
-        <header>
-            <button type="button" onclick="darkFunction()" class="darkmode_button"></button>
-            <div class="tp">
-                <nav>
-                <h3>lien vers tp</h3>
-                <ul>
-                    <li><a href="../index.html">*acceuil</a></li>
-                    <li><a href="tp3.html">tp3</a></li>
-                    <li><a href="../tp4/acceuiltp4.html">tp4</a></li>
-                    <li><a href="../tp5.html">tp5</a></li>
-                    <li><a href="../tp6/index.html">tp6</a></li>
-                    <li><a href="../tp7/tp7.html">tp7</a></li>
-                    <li><a href="../tp8/index.php">tp8</a></li>
-                </ul>
-            </nav>
-            </div>
-        </header>
+    <header>
+        <?php include("../tp8/header.php"); ?>
+    </header>
         <details>
             <summary>Exercice 1 (liste balise html)</summary>
         <div id="exercice 1">
@@ -77,7 +65,7 @@
                 </tr>
                 <tr>
                     <td>span</td>
-                    <td>conteneur en ligne pour cibler/styliser du texte</td>
+                    <td>Conteneur en ligne pour cibler/styliser du texte</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;span class="accent"&gt;mot&lt;/span&gt;</code></pre>
                         <div class="apercu"><span class="accent">mot</span></div>
@@ -85,7 +73,7 @@
                 </tr>
                 <tr>
                     <td>br</td>
-                    <td>retour à la ligne dans un texte</td>
+                    <td>Retour à la ligne dans un texte</td>
                     <td class="exemple">
                         <pre><code class="language-html">Ligne 1&lt;br&gt;Ligne 2</code></pre>
                         <div class="apercu">Ligne 1<br>Ligne 2</div>
@@ -112,7 +100,7 @@
                 </tr>
                 <tr>
                     <td>strong</td>
-                    <td>emphase forte (souvent en gras)</td>
+                    <td>Emphase forte (souvent en gras)</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;strong&gt;important&lt;/strong&gt;</code></pre>
                         <div class="apercu"><strong>important</strong></div>
@@ -120,7 +108,7 @@
                 </tr>
                 <tr>
                     <td>b</td>
-                    <td>mise en avant visuelle (sans importance sémantique)</td>
+                    <td>Mise en avant visuelle (sans importance sémantique)</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;b&gt;mot mis en avant&lt;/b&gt;</code></pre>
                         <div class="apercu"><b>mot mis en avant</b></div>
@@ -128,7 +116,7 @@
                 </tr>
                 <tr>
                     <td>i</td>
-                    <td>différence de ton (terme, pensée), italique</td>
+                    <td>Différence de ton (terme, pensée), italique</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;i&gt;terme étranger&lt;/i&gt;</code></pre>
                         <div class="apercu"><i>terme étranger</i></div>
@@ -136,7 +124,7 @@
                 </tr>
                 <tr>
                     <td>mark</td>
-                    <td>surligne pour mettre en évidence</td>
+                    <td>Surligne pour mettre en évidence</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;mark&gt;mot clé&lt;/mark&gt;</code></pre>
                         <div class="apercu"><mark>mot clé</mark></div>
@@ -144,7 +132,7 @@
                 </tr>
                 <tr>
                     <td>small</td>
-                    <td>texte secondaire (mentions, notes)</td>
+                    <td>Texte secondaire (mentions, notes)</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;small&gt;note&lt;/small&gt;</code></pre>
                         <div class="apercu"><small>note</small></div>
@@ -160,7 +148,7 @@
                 </tr>
                 <tr>
                     <td>ins</td>
-                    <td>texte inséré (ajout)</td>
+                    <td>Texte inséré (ajout)</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;ins&gt;nouveau texte&lt;/ins&gt;</code></pre>
                         <div class="apercu"><ins>nouveau texte</ins></div>
@@ -168,7 +156,7 @@
                 </tr>
                 <tr>
                     <td>s</td>
-                    <td>texte obsolète/inexact (barré)</td>
+                    <td>Texte obsolète/inexact (barré)</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;s&gt;prix ancien&lt;/s&gt;</code></pre>
                         <div class="apercu"><s>prix ancien</s></div>
@@ -176,7 +164,7 @@
                 </tr>
                 <tr>
                     <td>u</td>
-                    <td>soulignement (annotation non textuelle)</td>
+                    <td>Soulignement (annotation non textuelle)</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;u&gt;annotation&lt;/u&gt;</code></pre>
                         <div class="apercu"><u>annotation</u></div>
@@ -192,7 +180,7 @@
                 </tr>
                 <tr>
                     <td>sup</td>
-                    <td>exposant (en haut de ligne)</td>
+                    <td>Exposant (en haut de ligne)</td>
                     <td class="exemple">
                         <pre><code class="language-html">x&lt;sup&gt;2&lt;/sup&gt;</code></pre>
                         <div class="apercu">x<sup>2</sup></div>
@@ -208,7 +196,7 @@
                 </tr>
                 <tr>
                     <td>dfn</td>
-                    <td>terme défini dans le contexte</td>
+                    <td>Terme défini dans le contexte</td>
                     <td class="exemple">
                         <pre><code class="language-html">Le mot &lt;dfn&gt;accessibilité&lt;/dfn&gt; est défini.</code></pre>
                         <div class="apercu">Le mot <dfn>accessibilité</dfn> est défini.</div>
@@ -224,7 +212,7 @@
                 </tr>
                 <tr>
                     <td>q</td>
-                    <td>citation courte (avec guillemets)</td>
+                    <td>Citation courte (avec guillemets)</td>
                     <td class="exemple">
                         <pre><code class="language-html">Il a dit : &lt;q&gt;Bonjour&lt;/q&gt;.</code></pre>
                         <div class="apercu">Il a dit : <q>Bonjour</q>.</div>
@@ -232,7 +220,7 @@
                 </tr>
                 <tr>
                     <td>blockquote</td>
-                    <td>citation longue (bloc séparé)</td>
+                    <td>Citation longue (bloc séparé)</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;blockquote&gt;Texte cité&lt;/blockquote&gt;</code></pre>
                         <div class="apercu"><blockquote>Texte cité</blockquote></div>
@@ -259,7 +247,7 @@
                 </tr>
                 <tr>
                     <td>pre</td>
-                    <td>texte préformaté (espaces/retours conservés)</td>
+                    <td>Texte préformaté (espaces/retours conservés)</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;pre&gt;ligne 1\n    ligne 2&lt;/pre&gt;</code></pre>
                         <div class="apercu"><pre>ligne 1
@@ -268,7 +256,7 @@
                 </tr>
                 <tr>
                     <td>kbd</td>
-                    <td>saisie utilisateur (clavier)</td>
+                    <td>saisi utilisateur (clavier)</td>
                     <td class="exemple">
                         <pre><code class="language-html">Appuyez sur &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;</code></pre>
                         <div class="apercu">Appuyez sur <kbd>Ctrl</kbd> + <kbd>S</kbd></div>
@@ -276,7 +264,7 @@
                 </tr>
                 <tr>
                     <td>samp</td>
-                    <td>sortie d’un programme</td>
+                    <td>Sortie d’un programme</td>
                     <td class="exemple">
                         <pre><code class="language-html">&lt;samp&gt;OK&lt;/samp&gt;</code></pre>
                         <div class="apercu"><samp>OK</samp></div>
@@ -300,7 +288,7 @@
                 </tr>
                 <tr>
                     <td>bdi</td>
-                    <td>isole la direction du texte</td>
+                    <td>Isole la direction du texte</td>
                     <td class="exemple">
                         <pre><code class="language-html">Nom : &lt;bdi&gt;עִבְרִית&lt;/bdi&gt;</code></pre>
                         <div class="apercu">Nom : <bdi>עִבְרִית</bdi></div>
@@ -316,7 +304,7 @@
                 </tr>
                 <tr>
                     <td>wbr</td>
-                    <td>césure possible dans un long mot</td>
+                    <td>Césure possible dans un long mot</td>
                     <td class="exemple">
                         <pre><code class="language-html">superlongmot&lt;wbr&gt;continu</code></pre>
                         <div class="apercu">superlongmot<wbr>continu</div>
@@ -356,7 +344,7 @@
 </ul>
 
 <p>
-    Bien qu'il existe des normes il peut y avoir des différences entre SGBDR dans la syntaxe. Ainsi on peut lire sur le site de <u><b>PostgreSQL</b></u>:
+    Bien qu'il existe des normes, il peut y avoir des différences entre SGBDR dans la syntaxe. Ainsi on peut lire sur le site de <u><b>PostgreSQL</b></u>:
 </p>
 
 <ul>
@@ -422,7 +410,7 @@
     <p>
         Je viens de terminer mon bac pro Système Numérique au Lycée St Louis à Crest. 
         Je poursuis sur une mention complémentaire en cybersécurité s'effectuant avec le titre professionnel 
-        de technicien d'assistance en informatique au Greta de Valence, afin de pouvoir faire un BTS SIO.
+        de technicien d'assistance en informatique aux Greta de Valence, afin de pouvoir faire un BTS SIO.
     </p>
     <p>
         <strong>Je recherche un stage :</strong> Pour une formation 1 an commençant en novembre.
